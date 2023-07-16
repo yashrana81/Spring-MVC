@@ -12,8 +12,8 @@ import service.UserService;
 
 @Controller
 public class ContactController {
-    //@Autowired
-    //UserService userService;
+    @Autowired
+    private UserService userService;
     //this method will add attributes to all the models returned by all the handler methods in this controller
     @ModelAttribute
     public void CommonData(Model model)
@@ -48,7 +48,7 @@ public class ContactController {
     @RequestMapping(path = "/processform" , method= RequestMethod.POST)
     public String handleForm(@ModelAttribute User user, Model model)
     {
-        //userService.createUser(user);
+        this.userService.createUser(user);
         System.out.println(user);
         return "success";
     }
