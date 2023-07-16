@@ -4,8 +4,9 @@
     <!DOCTYPE html>
         <html>
         <body>
-        <h1>Name is ${name}</h1>
-        <h1>Email Id is is ${email}</h1>
-        <h1>Password is ${password}</h1>
+        <h1>my name is ${Header}</h1>
+        <h1>Name is ${user.userName}</h1>
+        <h1>Email Id is is ${user.userEmail}</h1>
+        <h1>Password is ${user.userPassword}</h1>
         </body>
         </html>
