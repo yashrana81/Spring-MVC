@@ -48,6 +48,11 @@ public class ContactController {
     @RequestMapping(path = "/processform" , method= RequestMethod.POST)
     public String handleForm(@ModelAttribute User user, Model model)
     {
+        //If the userName field is empty in the form it will redirect it to the form back
+        if(user.getUserName().isBlank())
+        {
+            return "redirect:/contact";
+        }
         this.userService.createUser(user);
         System.out.println(user);
         return "success";
