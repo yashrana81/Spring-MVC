@@ -2,6 +2,7 @@ package controller;
 
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +20,12 @@ public class ContactController {
         model.addAttribute("Header","YASH RANA");
     }
 
-
     @RequestMapping("/contact/{id}")
-    public String showForm(@PathVariable("id") int id)
+    public String showForm(@PathVariable("id") String id)
     {
-        System.out.println("id is "+ id);
+        id=null;
+        int n=id.length();
+        System.out.println("id is "+ id +"length "+n);
         return "contact";
     }
 
@@ -55,4 +57,11 @@ public class ContactController {
         System.out.println(user);
         return "success";
     }
+
+//    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+//    @ExceptionHandler(value = Exception.class)
+//    public String exceptionhandler.exceptionHandler()
+//    {
+//        return "error";
+//    }
 }
